@@ -10,6 +10,12 @@ yarn add @extra-workflow/extra-disk-cache
 ### DiskStore
 ```ts
 class DiskStore<T> implements IStore<T> {
+  constructor(
+    cache: DiskCache
+  , toBuffer: (value: IRecord<T>) => Buffer = defaultToBuffer
+  , fromBuffer: (buffer: Buffer) => IRecord<T> = defaultFromBuffer
+  )
+
   set(index: number, record: IRecord<T>): void
   get(index: number): IRecord<T> | undefined
   pop(): IRecord<T> | undefined
