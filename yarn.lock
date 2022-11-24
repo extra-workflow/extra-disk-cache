@@ -575,7 +575,7 @@
     iterable-operator "^1.2.1"
     justypes "^3.0.0"
 
-"@blackglory/prelude@^0.1.7", "@blackglory/prelude@^0.1.8":
+"@blackglory/prelude@^0.1.5", "@blackglory/prelude@^0.1.7", "@blackglory/prelude@^0.1.8":
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/@blackglory/prelude/-/prelude-0.1.8.tgz#e8b91d48313983534cdfffce25a6128e9ebc2f61"
   integrity sha512-d5uG2yd9a+vkxtW/CFDdnMh7xDmdLn0KTaxqegXs1RrhPgetIfNqNmvEGEpGrR4jrMlCLB159D5cus0SczJ7zg==
@@ -2826,6 +2826,14 @@ extra-promise@^4.1.0, extra-promise@^4.3.0:
     lodash "^4.17.21"
     return-style "^1.0.0"
 
+extra-proxy@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/extra-proxy/-/extra-proxy-0.3.0.tgz#8cd6136e389f1b6b1e040581f1543d7d267434a4"
+  integrity sha512-9iK/i3s2qLCmaKaHyZHasvQVZx9CfUozQFjODc74L0gYqDsMLEu+v3K82RWYgvR89qRpAHTWz0AiZPeDXc50Bw==
+  dependencies:
+    "@blackglory/prelude" "^0.1.5"
+    hotypes "^0.5.0"
+
 extra-rand@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/extra-rand/-/extra-rand-0.1.1.tgz#e75e71ec96eb2f9b47d2a3c6513b3fb042f05a45"
@@ -2851,12 +2859,13 @@ extra-utils@^3.0.0, extra-utils@^3.3.0:
     justypes "^3.0.0"
     lodash "^4.17.21"
 
-extra-workflow@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/extra-workflow/-/extra-workflow-0.3.0.tgz#45c3d7da36ec73b82b2fb6dd88c8c24f25cac954"
-  integrity sha512-WcDxXFF/HoKiPDrWB1g8shKnSodt9WgrqlouCN2dZh5WVbcOBJ/W3CERxFtzHWb8mrGRM/eTZkrJa7xzVEYNig==
+extra-workflow@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/extra-workflow/-/extra-workflow-0.4.0.tgz#643fdba596cb32537017b9a8294e04b79825a8a1"
+  integrity sha512-8Z8tMIr9Z21nGp8qHFpUoeiysxYG/VPfiQTDY/5zSAsHnOW2Rwjvo8tn5T6EuDMggk33BxfwHD9c+U6kk2ScCg==
   dependencies:
     "@blackglory/prelude" "^0.1.8"
+    extra-proxy "^0.3.0"
     return-style "^1.0.0"
 
 fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
