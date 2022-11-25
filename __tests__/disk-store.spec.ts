@@ -1,12 +1,12 @@
 import { DiskStore } from '@src/disk-store'
 import { IRecord } from 'extra-workflow'
-import { DiskCache } from 'extra-disk-cache'
+import { DiskCache, DiskCacheView, JSONValueConverter } from 'extra-disk-cache'
 
 describe('DiskStore', () => {
   describe('set', () => {
     test('record does not exist', async () => {
       const cache = await DiskCache.create()
-      const store = new DiskStore(cache)
+      const store = new DiskStore(createView(cache))
       const record: IRecord<string> = {
         type: 'result'
       , value: 'value'
@@ -21,7 +21,7 @@ describe('DiskStore', () => {
 
     test('record exists', async () => {
       const cache = await DiskCache.create()
-      const store = new DiskStore(cache)
+      const store = new DiskStore(createView(cache))
       const oldRecord: IRecord<string> = {
         type: 'result'
       , value: 'old-value'
@@ -43,7 +43,7 @@ describe('DiskStore', () => {
   describe('get', () => {
     test('record exists', async () => {
       const cache = await DiskCache.create()
-      const store = new DiskStore(cache)
+      const store = new DiskStore(createView(cache))
       const record: IRecord<string> = {
         type: 'result'
       , value: 'value'
@@ -57,7 +57,7 @@ describe('DiskStore', () => {
 
     test('event does not exist', async () => {
       const cache = await DiskCache.create()
-      const store = new DiskStore(cache)
+      const store = new DiskStore(createView(cache))
 
       const result = store.get(0)
 
@@ -68,7 +68,7 @@ describe('DiskStore', () => {
   describe('pop', () => {
     test('record exists', async () => {
       const cache = await DiskCache.create()
-      const store = new DiskStore(cache)
+      const store = new DiskStore(createView(cache))
       const record: IRecord<string> = {
         type: 'result'
       , value: 'value'
@@ -83,7 +83,7 @@ describe('DiskStore', () => {
 
     test('record does not exist', async () => {
       const cache = await DiskCache.create()
-      const store = new DiskStore(cache)
+      const store = new DiskStore(createView(cache))
 
       const result = store.pop()
 
@@ -94,7 +94,7 @@ describe('DiskStore', () => {
 
   test('clear', async () => {
     const cache = await DiskCache.create()
-    const store = new DiskStore(cache)
+    const store = new DiskStore(createView(cache))
     const record: IRecord<string> = {
       type: 'result'
     , value: 'value'
@@ -108,7 +108,7 @@ describe('DiskStore', () => {
 
   test('dump', async () => {
     const cache = await DiskCache.create()
-    const store = new DiskStore(cache)
+    const store = new DiskStore(createView(cache))
     const record1: IRecord<string> = {
       type: 'result'
     , value: 'value-1'
@@ -128,3 +128,14 @@ describe('DiskStore', () => {
     ])
   })
 })
+
+function createView(cache: DiskCache): DiskCacheView<number, IRecord<string>> {
+  return new DiskCacheView(
+    cache
+  , {
+      fromString: str => Number(str)
+    , toString: index => index.toString()
+    }
+  , new JSONValueConverter()
+  )
+}

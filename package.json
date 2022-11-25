@@ -36,7 +36,7 @@
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
     "eslint": "^8.28.0",
-    "extra-disk-cache": "^0.8.7",
+    "extra-disk-cache": "^0.8.10",
     "extra-workflow": "^0.4.0",
     "husky": "4",
     "jest": "^29.3.1",
@@ -54,7 +54,7 @@
     "iterable-operator": "^2.5.0"
   },
   "peerDependencies": {
-    "extra-disk-cache": "^0.8.4",
+    "extra-disk-cache": "^0.8.8",
     "extra-workflow": "^0.3.0 || ^0.4.0"
   }
 }

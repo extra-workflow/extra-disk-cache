@@ -1,29 +1,11 @@
 import { IRecord, IStore } from 'extra-workflow'
-import { DiskCache, DiskCacheView } from 'extra-disk-cache'
+import { DiskCacheView } from 'extra-disk-cache'
 import { sortNumbersAscending } from 'extra-sort'
 import { toArray, isntUndefined } from '@blackglory/prelude'
 import { last } from 'iterable-operator'
 
 export class DiskStore<T> implements IStore<T> {
-  private view: DiskCacheView<number, IRecord<T>>
-
-  constructor(
-    private cache: DiskCache
-  , toBuffer: (value: IRecord<T>) => Buffer = defaultToBuffer
-  , fromBuffer: (buffer: Buffer) => IRecord<T> = defaultFromBuffer
-  ) {
-    this.view = new DiskCacheView<number, IRecord<T>>(
-      cache
-    , {
-        toString: x => x.toString()
-      , fromString: x => Number(x)
-      }
-    , {
-        toBuffer
-      , fromBuffer
-      }
-    )
-  }
+  constructor(private view: DiskCacheView<number, IRecord<T>>) {}
 
   set(index: number, record: IRecord<T>): void {
     this.view.set(index, record)
@@ -43,7 +25,7 @@ export class DiskStore<T> implements IStore<T> {
   }
 
   clear(): void {
-    this.cache.clear()
+    this.view.clear()
   }
 
   dump(): Array<IRecord<T>> {
@@ -59,12 +41,4 @@ export class DiskStore<T> implements IStore<T> {
     sortNumbersAscending(indexes)
     return indexes
   }
-}
-
-function defaultToBuffer<T>(value: T): Buffer {
-  return Buffer.from(JSON.stringify(value))
-}
-
-function defaultFromBuffer<T>(buffer: Buffer): T {
-  return JSON.parse(buffer.toString())
 }
