@@ -12,7 +12,7 @@ export class DiskStore<T> implements IStore<T> {
   }
 
   get(index: number): IRecord<T> | undefined {
-    return this.view.get(index)?.value
+    return this.view.get(index)
   }
 
   pop(): IRecord<T> | undefined {
@@ -30,10 +30,7 @@ export class DiskStore<T> implements IStore<T> {
 
   dump(): Array<IRecord<T>> {
     return this.getIndexesAscending()
-      .map(index => {
-        const item = this.view.get(index)!
-        return item.value
-      })
+      .map(index => this.view.get(index)!)
   }
 
   private getIndexesAscending(): number[] {
