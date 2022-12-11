@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/extra-workflow/extra-disk-cache/compare/v0.2.0...v0.3.0) (2022-12-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* It requires extra-disk-cache@^0.9.0
+
+* upgrade dependencies ([cdaee04](https://github.com/extra-workflow/extra-disk-cache/commit/cdaee041ea9ee6e5b105c404d50f68c73b8315f4))
+
 ## [0.2.0](https://github.com/extra-workflow/extra-disk-cache/compare/v0.1.1...v0.2.0) (2022-11-25)
 
 
