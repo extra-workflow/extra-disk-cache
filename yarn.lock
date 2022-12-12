@@ -2731,10 +2731,10 @@ extra-compatible@^0.1.0:
     "@blackglory/prelude" "^0.1.7"
     iterable-operator "^2.1.0"
 
-extra-disk-cache@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/extra-disk-cache/-/extra-disk-cache-0.9.0.tgz#4c36816ef92196bf263b9e4b9b6bceb392595c0d"
-  integrity sha512-CgwUwFZTGuDqpiwkZDSbE8Lb0cd3nXzPRjh/8jXo2whb283GW1Nf4iEaNiO13lTwzUeVgv+CVzAM0swcFe9ybA==
+extra-disk-cache@^0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/extra-disk-cache/-/extra-disk-cache-0.10.1.tgz#982b5b0571cdea3c6c6d9af5c7992461c595c19d"
+  integrity sha512-qabUUKtbVEytrpi1WG7j8+iMdv5735IPmoymFpv5V4x8Lt7lcgww9juUw7gJ/A0bN2+zyDboFGaEj7enHVdQng==
   dependencies:
     "@blackglory/better-sqlite3-migrations" "^0.1.16"
     "@blackglory/prelude" "^0.1.8"
