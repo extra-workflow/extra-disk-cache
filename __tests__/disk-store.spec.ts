@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest'
-import { DiskStore } from '@src/disk-store'
+import { DiskStore } from '@src/disk-store.js'
 import { IRecord } from 'extra-workflow'
 import { DiskCache, DiskCacheView, JSONValueConverter } from 'extra-disk-cache'
 
