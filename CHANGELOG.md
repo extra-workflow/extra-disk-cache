@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/extra-workflow/extra-disk-cache/compare/v0.3.2...v0.4.0) (2024-10-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* - CommonJS => ESM
+- The minimal version of Node.js is v18.17.0
+
+* upgrade dependencies ([d5bf0cc](https://github.com/extra-workflow/extra-disk-cache/commit/d5bf0cc258117ac803d88029b86924a58d8b84ab))
+
 ### [0.3.2](https://github.com/extra-workflow/extra-disk-cache/compare/v0.3.1...v0.3.2) (2022-12-21)
 
 ### [0.3.1](https://github.com/extra-workflow/extra-disk-cache/compare/v0.3.0...v0.3.1) (2022-12-12)
